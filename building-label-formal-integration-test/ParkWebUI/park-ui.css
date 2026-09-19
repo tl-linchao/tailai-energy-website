@@ -1,0 +1,1034 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #172a22;
+  --paper: rgba(248, 252, 250, 0.76);
+  --paper-strong: rgba(255, 255, 255, 0.9);
+  --line: rgba(37, 76, 60, 0.13);
+  --ink: #263f34;
+  --muted: #7b9188;
+  --green: #16895d;
+  --mint: #22bd7b;
+  --shadow: 0 22px 64px rgba(38, 67, 55, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #d9e9e3;
+}
+
+body {
+  min-width: 320px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.park-showcase,
+#unity-container,
+#unity-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#unity-container.unity-desktop {
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
+#unity-canvas {
+  display: block;
+  outline: none;
+  background: #d8e6e1;
+}
+
+#unity-footer,
+#unity-logo-title-footer,
+#unity-build-title,
+#unity-fullscreen-button,
+#unity-logo {
+  display: none !important;
+}
+
+.park-ui {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  pointer-events: none;
+}
+
+.park-ui.is-loading .park-scene-nav,
+.park-ui.is-loading .park-interaction-hint {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* --- V4: 左上角品牌 SLOGAN（单行标题 + 下方说明） --- */
+.park-hero-copy {
+  position: absolute;
+  z-index: 20;
+  top: clamp(52px, 6vh, 86px);
+  left: clamp(56px, 5vw, 108px);
+  width: min(980px, calc(100vw - 430px));
+  pointer-events: none;
+  transition: opacity 360ms ease, transform 420ms cubic-bezier(.2,.75,.2,1);
+}
+
+.park-ui.is-loading .park-hero-copy {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.park-ui.is-focus-view .park-hero-copy {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+.park-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 16px;
+  color: #159368;
+  font-size: clamp(11px, .85vw, 15px);
+  font-weight: 760;
+  letter-spacing: .23em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(235,248,242,.7);
+}
+
+.park-eyebrow span {
+  width: clamp(34px, 3vw, 54px);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #159368, #22bd7b);
+  box-shadow: 0 0 16px rgba(34,189,123,.15);
+}
+
+.park-hero-copy h1 {
+  margin: 0;
+  color: rgba(12, 42, 31, .95);
+  font-size: clamp(42px, 3.7vw, 66px);
+  font-weight: 710;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+  text-shadow:
+    0 2px 18px rgba(244,251,248,.82),
+    0 1px 2px rgba(255,255,255,.55);
+}
+
+.park-hero-summary {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: rgba(57, 86, 74, .76);
+  font-size: clamp(13px, .92vw, 16px);
+  font-weight: 450;
+  line-height: 1.7;
+  letter-spacing: .01em;
+  text-shadow: 0 1px 14px rgba(244,251,248,.82);
+}
+
+.park-scene-nav {
+  position: absolute;
+  z-index: 50;
+  top: 80px;
+  right: 30px;
+  width: 244px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(1.18);
+  -webkit-backdrop-filter: blur(24px) saturate(1.18);
+  pointer-events: auto;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+/* --- 场景说明卡片（右下区域，fixed 直对 viewport） --- */
+#park-scene-card {
+  position: fixed;
+  z-index: 40;
+  right: 24px;
+  bottom: 80px;
+  width: 280px;
+  max-width: calc(100vw - 48px);
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(1.18);
+  -webkit-backdrop-filter: blur(24px) saturate(1.18);
+  pointer-events: none;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+#park-scene-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), transparent 44%);
+}
+
+.park-scene-card__title {
+  position: relative;
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.park-scene-card__body {
+  position: relative;
+  margin: 0;
+  color: rgba(57, 86, 74, 0.82);
+  font-size: 13.5px;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+#park-scene-card.is-fading {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.park-ui.is-loading #park-scene-card {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* --- 全屏切换按钮（左下角） --- */
+#park-fullscreen-btn {
+  position: fixed;
+  z-index: 35;
+  left: 24px;
+  bottom: 24px;
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 4px 16px rgba(38, 67, 55, 0.08);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  pointer-events: auto;
+  white-space: nowrap;
+  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+#park-fullscreen-btn:hover {
+  background: rgba(255, 255, 255, 0.38);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(38, 67, 55, 0.12);
+}
+
+#park-fullscreen-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(38, 67, 55, 0.08);
+}
+
+.park-ui.is-loading #park-fullscreen-btn {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.park-scene-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255,255,255,.3), transparent 44%);
+}
+
+.park-scene-nav__head {
+  position: relative;
+  padding: 0 6px 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(45, 84, 67, 0.09);
+}
+
+.park-scene-nav__head strong {
+  font-size: 12px;
+  font-weight: 760;
+  color: #314a40;
+}
+
+.park-scene-button {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  margin-top: 2px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.park-scene-button:hover,
+.park-scene-button:focus-visible,
+.park-scene-button.is-active {
+  outline: none;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 6px 18px rgba(51, 82, 69, 0.07);
+  transform: translateX(-2px);
+}
+
+.park-scene-button:active {
+  transform: translateX(-2px) scale(0.99);
+}
+
+.park-scene-button .park-scene-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--scene-color);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--scene-color) 14%, transparent);
+}
+
+.park-scene-button span,
+.park-scene-button strong,
+.park-scene-button small {
+  display: block;
+  min-width: 0;
+}
+
+.park-scene-button strong {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.park-scene-button small {
+  margin-top: 4px;
+  overflow: hidden;
+  color: #81948c;
+  font-size: 9px;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.park-scene-button > b {
+  align-self: start;
+  padding-top: 3px;
+  color: #a3b2ac;
+  font-size: 8px;
+  font-weight: 720;
+}
+
+.park-scene-button.is-active > b {
+  color: var(--green);
+}
+
+/* 当前视角状态行（已并入 park-scene-nav 内部） */
+.park-scene-nav__status {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 6px 10px;
+  border-bottom: 1px solid rgba(45, 84, 67, 0.09);
+}
+
+.park-scene-nav__status > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #7d9189;
+  font-size: 9px;
+}
+
+.park-scene-nav__status > span i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 4px rgba(34,189,123,.12);
+}
+
+.park-scene-nav__status strong {
+  color: #375044;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* 泰莱综能绿色零碳智能管理平台入口 */
+.park-external-entry {
+  position: absolute;
+  z-index: 50;
+  right: 30px;
+  top: 28px;
+  width: 244px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 13px;
+  background: rgba(248,252,250,.64);
+  box-shadow: 0 12px 34px rgba(44,77,63,.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #375044;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: .18s ease;
+  transition-property: background,transform,box-shadow;
+}
+.park-external-entry::before {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 4px rgba(34,189,123,.12);
+}
+.park-external-entry span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.park-external-entry:hover {
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 14px 30px rgba(44,77,63,.12);
+  transform: translateY(-1px);
+}
+.park-ui.is-loading .park-external-entry {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.park-interaction-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 999px;
+  color: rgba(48,72,62,.63);
+  background: rgba(250,253,251,.34);
+  box-shadow: 0 8px 24px rgba(42,70,58,.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 9px;
+  letter-spacing: .02em;
+  transform: translateX(-50%);
+  transition: opacity 320ms ease;
+}
+
+.park-ui.is-loading .park-interaction-hint {
+  transform: translateX(-50%) translateY(8px);
+}
+
+.park-mouse {
+  position: relative;
+  width: 15px;
+  height: 21px;
+  border: 1px solid rgba(35,70,55,.45);
+  border-radius: 9px;
+}
+
+.park-mouse i {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 2px;
+  height: 5px;
+  border-radius: 2px;
+  background: rgba(35,70,55,.55);
+  transform: translateX(-50%);
+  animation: park-wheel 1.7s ease-in-out infinite;
+}
+
+@keyframes park-wheel {
+  0%, 100% { transform: translate(-50%, 0); opacity: .8; }
+  50% { transform: translate(-50%, 4px); opacity: .35; }
+}
+
+.park-loader {
+  position: fixed !important;
+  z-index: 80;
+  inset: 0 !important;
+  display: none;
+  place-items: center;
+  transform: none !important;
+  background: radial-gradient(circle at 50% 45%, rgba(238,247,243,.74), rgba(220,235,229,.94));
+}
+
+.park-loader-card {
+  width: min(360px, calc(100vw - 44px));
+  padding: 20px 22px;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 18px;
+  background: rgba(252,254,253,.78);
+  box-shadow: 0 24px 70px rgba(40,70,58,.16);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.park-loader-heading {
+  display: grid;
+  grid-template-columns: 8px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  color: #476057;
+  font-size: 11px;
+}
+
+.park-loader-heading strong {
+  color: var(--green);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.park-loader-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 5px rgba(34,189,123,.12);
+}
+
+.park-loader-track {
+  width: 100% !important;
+  height: 4px !important;
+  margin: 15px 0 10px !important;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(34,75,58,.1) !important;
+}
+
+.park-loader-progress {
+  width: 0%;
+  height: 100% !important;
+  margin: 0 !important;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16895d, #22bd7b) !important;
+  transition: width 160ms linear;
+}
+
+.park-loader-card small {
+  color: #8a9c95;
+  font-size: 9px;
+}
+
+#unity-warning {
+  position: fixed;
+  z-index: 120;
+  top: 18px;
+  left: 50%;
+  width: min(520px, calc(100vw - 36px));
+  display: none;
+  transform: translateX(-50%);
+}
+
+.park-warning {
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #334a40;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 12px 36px rgba(42,70,58,.15);
+  font-size: 11px;
+}
+
+.park-warning--warning {
+  color: #79521a;
+  background: rgba(255,247,226,.96);
+}
+
+.park-warning--error {
+  color: #872f2f;
+  background: rgba(255,235,235,.97);
+}
+
+@media (max-width: 760px) {
+  .park-scene-nav {
+    top: 60px;
+    right: 14px;
+    width: 210px;
+    padding: 10px;
+  }
+
+  .park-scene-nav__status {
+    top: 60px;
+    right: 14px;
+    width: 210px;
+  }
+
+  .park-external-entry {
+    top: 14px;
+    right: 14px;
+    width: 210px;
+  }
+
+  #park-scene-card {
+    bottom: 80px;
+  }
+
+  .park-interaction-hint {
+    bottom: 14px;
+    max-width: calc(100vw - 28px);
+    white-space: nowrap;
+  }
+}
+
+/* --- V2: 3D 设备坐标网页定位标签 --- */
+.park-world-labels {
+  position: fixed;
+  z-index: 24;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.park-world-labels.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.park-world-label {
+  --anchor-x: 50vw;
+  --anchor-y: 50vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  width: 150px;
+  height: 96px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(var(--anchor-x), var(--anchor-y), 0) translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.park-world-label.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.park-world-label:hover {
+  filter: brightness(1.04);
+}
+
+.park-world-label__card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  min-width: 126px;
+  padding: 9px 12px 8px;
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 10px;
+  background: rgba(247,251,249,.93);
+  box-shadow: 0 10px 28px rgba(37,69,55,.12);
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.park-world-label__card strong,
+.park-world-label__card small {
+  display: block;
+}
+
+.park-world-label__card strong {
+  color: #29483b;
+  font-size: 11px;
+  font-weight: 740;
+  letter-spacing: .02em;
+}
+
+.park-world-label__card small {
+  margin-top: 3px;
+  color: #84988f;
+  font-size: 6px;
+  font-weight: 760;
+  letter-spacing: .13em;
+}
+
+.park-world-label__stem {
+  position: absolute;
+  left: 50%;
+  top: 46px;
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(54,117,88,.46), rgba(54,117,88,.1));
+  transform: translateX(-50%);
+}
+
+.park-world-label__pulse {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid rgba(34,189,123,.9);
+  border-radius: 50%;
+  background: rgba(235,255,247,.9);
+  box-shadow: 0 0 0 3px rgba(34,189,123,.13), 0 0 18px rgba(34,189,123,.32);
+  transform: translateX(-50%);
+}
+
+.park-world-label__pulse::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(34,189,123,.52);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: park-anchor-pulse 2.2s ease-out infinite;
+}
+
+@keyframes park-anchor-pulse {
+  0% { opacity: .72; transform: translate(-50%, -50%) scale(.7); }
+  72%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.25); }
+}
+
+@media (max-width: 760px) {
+  .park-world-label__card { min-width: 108px; padding: 7px 9px; }
+  .park-world-label__card strong { font-size: 10px; }
+}
+
+
+/* V4 SLOGAN 响应式 */
+@media (max-width: 1100px) {
+  .park-hero-copy {
+    top: 54px;
+    left: 40px;
+    width: calc(100vw - 330px);
+  }
+  .park-hero-copy h1 { font-size: clamp(32px, 4.2vw, 48px); }
+  .park-hero-summary { font-size: 12px; max-width: 620px; }
+}
+
+@media (max-width: 760px) {
+  .park-hero-copy {
+    top: 26px;
+    left: 22px;
+    width: calc(100vw - 210px);
+  }
+  .park-eyebrow { margin-bottom: 10px; font-size: 9px; gap: 9px; }
+  .park-eyebrow span { width: 24px; height: 2px; }
+  .park-hero-copy h1 { font-size: clamp(21px, 4.6vw, 31px); }
+  .park-hero-summary { display: none; }
+}
+
+@media (max-width: 560px) {
+  .park-hero-copy { display: none; }
+}
+
+
+/* --- V5: 储能设备 + 移动储充 A/B 充放电位置标签 --- */
+.park-route-label {
+  --anchor-x: 50vw;
+  --anchor-y: 50vh;
+  --route-accent: #22bd7b;
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  width: 124px;
+  height: 74px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(var(--anchor-x), var(--anchor-y), 0) translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.park-route-label.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.park-route-label--a { --route-accent: #20b978; }
+.park-route-label--b { --route-accent: #4d86d8; }
+
+.park-route-label__card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 108px;
+  padding: 6px 9px 6px 7px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 9px;
+  color: #29473b;
+  background: rgba(247,251,249,.92);
+  box-shadow: 0 8px 22px rgba(37,69,55,.10);
+  transform: translateX(-50%);
+}
+
+.park-route-label__card > b {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #fff;
+  background: var(--route-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--route-accent) 12%, transparent);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.park-route-label__card > span,
+.park-route-label__card strong,
+.park-route-label__card small {
+  display: block;
+}
+
+.park-route-label__card strong {
+  color: #314d41;
+  font-size: 10px;
+  line-height: 1.15;
+}
+
+.park-route-label__card small {
+  margin-top: 2px;
+  color: #8ca098;
+  font-size: 6px;
+  font-weight: 720;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.park-route-label__stem {
+  position: absolute;
+  left: 50%;
+  top: 35px;
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--route-accent) 70%, transparent), rgba(255,255,255,.04));
+  transform: translateX(-50%);
+}
+
+.park-route-label__pulse {
+  position: absolute;
+  left: 50%;
+  top: 57px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid rgba(255,255,255,.88);
+  border-radius: 50%;
+  background: var(--route-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--route-accent) 20%, transparent), 0 0 18px color-mix(in srgb, var(--route-accent) 42%, transparent);
+  transform: translate(-50%, -50%);
+}
+
+.park-route-label__pulse::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid color-mix(in srgb, var(--route-accent) 48%, transparent);
+  border-radius: 50%;
+  animation: park-route-pulse 2.2s ease-out infinite;
+}
+
+@keyframes park-route-pulse {
+  0% { transform: scale(.55); opacity: .8; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .park-route-label { transform: translate(-50%, -94%) scale(.9); }
+}
+
+/* --- V6: 正式楼号 + 企业标签 --- */
+.park-building-label {
+  --anchor-x: 50vw;
+  --anchor-y: 50vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(var(--anchor-x), var(--anchor-y), 0) translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.park-building-label.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.park-building-number {
+  min-width: 36px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  background: #16895d;
+  font-size: 15px;
+  font-weight: 760;
+  letter-spacing: .03em;
+  line-height: 1.3;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(22,137,93,.32);
+}
+
+.park-building-company {
+  max-width: 160px;
+  padding: 3px 9px;
+  border: 1px solid rgba(22,137,93,.42);
+  border-radius: 6px;
+  color: #29483b;
+  background: rgba(255,255,255,.85);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* --- 左侧中部信息卡片（与"园区全景"卡片同款白色毛玻璃） --- */
+.park-left-info {
+  position: fixed;
+  z-index: 40;
+  left: 24px;
+  top: 148px;            /* LOGO（top:20px + 高110px）正下方，留 18px 间距 */
+  width: 280px;
+  max-width: calc(100vw - 48px);
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px) saturate(1.18);
+  -webkit-backdrop-filter: blur(24px) saturate(1.18);
+  pointer-events: none;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.park-left-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), transparent 44%);
+}
+
+/* 左侧信息卡：标题行（淡绿底块强调，字号沿用 .park-scene-card__title 不变） */
+.park-left-info .park-scene-card__title {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: rgba(34, 189, 123, 0.1);
+  color: var(--mint, #22bd7b);
+  text-align: center;
+}
+
+/* 左侧信息卡：口号行（强调）与数据行（弱化） */
+.park-left-info__slogan {
+  margin: 10px 0 8px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: rgba(34, 189, 123, 0.1);
+  color: var(--mint, #22bd7b);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+.park-left-info__meta {
+  margin: 0;
+  padding-top: 9px;
+  border-top: 1px dashed rgba(57, 86, 74, 0.18);
+  color: rgba(57, 86, 74, 0.66);
+  font-size: 11.5px;
+  font-weight: 460;
+  letter-spacing: .01em;
+  line-height: 1.75;
+}
+
+/* 加载完成前隐藏，与其他面板一致 */
+.park-ui.is-loading .park-left-info {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+/* --- 相机运动期间自动摘除毛玻璃（backdrop-filter 是环游卡顿主因），静止后恢复 --- */
+.park-ui.is-motion .park-scene-nav,
+.park-ui.is-motion #park-scene-card,
+.park-ui.is-motion .park-external-entry,
+.park-ui.is-motion .park-interaction-hint,
+.park-ui.is-motion #park-fullscreen-btn,
+.park-ui.is-motion .park-left-info {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: rgba(248, 252, 250, 0.92);
+}
+
+.park-ui.is-motion .park-interaction-hint {
+  background: rgba(250, 253, 251, 0.9);
+}
+
+.park-ui.is-motion #park-fullscreen-btn {
+  background: rgba(255, 255, 255, 0.9);
+}

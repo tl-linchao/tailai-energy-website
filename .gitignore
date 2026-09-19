@@ -1,0 +1,18 @@
+# 办公文档(公司内部资料,不上传公开仓库)
+*.doc
+*.docx
+*.pptx
+*.pdf
+*.zip
+~$*
+
+# 本地运行相关
+启动官网.bat
+官网/使用说明.txt
+building-label-formal-integration-test/LocalServer/
+building-label-formal-integration-test/web-backup-before-platform-entry-20260914/
+building-label-formal-integration-test/启动园区展示.bat
+building-label-formal-integration-test/启动园区展示.command
+
+# Unity 大数据文件(185MB,超过 GitHub 100MB 单文件限制,线上版暂不含)
+building-label-formal-integration-test/Build/building-label-formal-candidate.data.unityweb

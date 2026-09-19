@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="LkuIexQN832ndXzKGmESP6">
+  <head data-page-node-id="ii3qnfCv5fy4iQBAAzkeyD">
+    <meta charset="utf-8" data-page-node-id="Ewu79ORTVGYHe90hrw4wGg" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" data-page-node-id="XwN2R59YmTH2StbeWML01L" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes" data-page-node-id="rZgCKvHdX4KqiMjHaZWBEq"
+    />
+    <meta
+      name="description"
+      content="零碳智慧园区数字孪生 Web 展示" data-page-node-id="7UgBFMjnBkIdV1VdblsMVN"
+    />
+    <title>零碳智慧园区｜数字孪生展示</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" data-page-node-id="eExfHwXgGHEIHsxxBol51J" />
+    <link rel="stylesheet" href="TemplateData/style.css" data-page-node-id="LXdBt0WWhBl192EL7QgGlA" />
+    <link rel="stylesheet" href="ParkWebUI/park-ui.css" data-page-node-id="fyDsXZ3VrC5LsZGaLxTc1n" />
+  </head>
+
+  <body data-page-node-id="GxSezrUSftXaDzGrrJFUCX">
+    <main id="park-showcase" class="park-showcase" data-page-node-id="rx2Ucw2WLCkrv2oqwHuC8X">
+      <div id="unity-container" class="unity-desktop" data-page-node-id="uYOWn3JIxArUvUBXZwyWOk">
+        <canvas id="unity-canvas" tabindex="-1" data-page-node-id="Py7ksW0ce1IVafiDLZCah4"></canvas>
+
+        <div id="unity-loading-bar" class="park-loader" role="status" aria-live="polite" data-page-node-id="845SFhmXkIazRGKgnjPW3w">
+          <div class="park-loader-card" data-page-node-id="kCVG68Z5CdnSFGe59Mi97F">
+            <div class="park-loader-heading" data-page-node-id="Dg1T53hVOXqVMWg8y5ZGv2">
+              <span class="park-loader-dot" aria-hidden="true" data-page-node-id="oRpiibLCfGjsJJBSj99aHh"></span>
+              <span data-page-node-id="yqgeZepDbCTJlWzpTL9wah">正在加载园区数字孪生</span>
+              <strong id="park-load-percent" data-page-node-id="7AlAfWCHtG8X3VcwgQjpZ0">0%</strong>
+            </div>
+            <div id="unity-progress-bar-empty" class="park-loader-track" data-page-node-id="e4R5755w04UBFcFuYurBPk">
+              <div id="unity-progress-bar-full" class="park-loader-progress" data-page-node-id="WPIJ0EGWsqKin0vVTNj3xE"></div>
+            </div>
+            <small data-page-node-id="Y002lLoHEC5Iw6RZXxerg7">首次加载资源较大，请稍候</small>
+          </div>
+        </div>
+
+        <div id="unity-warning" data-page-node-id="JNUFesUC5iIXjbqhyw2wUZ"></div>
+      </div>
+
+      <section id="park-web-ui" class="park-ui is-loading" aria-label="园区浏览控制" data-page-node-id="CHb4cdmZ208icNEejOt6aY">
+        <img
+          class="park-logo"
+          src="新 LOGO1.png"
+          alt="TATAN CARBON BASED 新材料产业零碳先锋"
+          style="position:absolute; z-index:30; top:20px; left:24px; height:110px; width:auto; pointer-events:none;" data-page-node-id="AWAB1CZAM0ppNqCaS0EX5b"
+        />
+
+        <div id="park-left-info" class="park-left-info" aria-label="园区信息" data-page-node-id="2mO0SMZcU44VoXLLZu6Awh">
+          <strong class="park-scene-card__title" data-page-node-id="DNoYjHUMoNCuXmGGYoCUlM">创新「电力托管 + 智能微电网 + 能碳管理平台」模式</strong>
+          <p class="park-scene-card__body" data-page-node-id="503fGOmxqhv2ArAai1ERKI">
+            投资方：全额投资、全程运维，获稳定能源与碳服务收益<br>
+            园区：零资金投入、零运维人力，获场地租赁与碳资产收益<br>
+            企业：零初期投资、用电成本更低，获绿电与碳合规能力
+          </p>
+          <p class="park-left-info__slogan" data-page-node-id="5fL0wYUMoNCuXmGGYoCUlM2">三方共赢 · 双效齐升</p>
+          <p class="park-left-info__meta" data-page-node-id="503fGOmxqhv2ArAai1ERKI2">
+            10.8MW 光伏 + 5MW/10MWh 储能 + V2G 充电桩 + 全域碳管理平台<br>
+            年供绿电超 1200 万度　年减排二氧化碳 9600 吨
+          </p>
+        </div>
+
+        <section class="park-hero-copy" aria-labelledby="park-page-title" hidden data-page-node-id="rCIXzcS00K7d8SVIcegF5k">
+          <p class="park-eyebrow" data-page-node-id="7fZzxa4thvcPwLoOnGVefV"><span data-page-node-id="PKthk6AO0DS2E1BHXvDcfY"></span>DIGITAL TWIN CAMPUS</p>
+          <h1 id="park-page-title" data-page-node-id="V9GLHVAqES4IzQMeaYadCE">让每一度绿色能源清晰可见</h1>
+          <p class="park-hero-summary" data-page-node-id="F2JmYkvCkvds1Bg7DatbJI">
+            聚焦光伏、储能、固定充电与移动储充等新能源设备，以三维交互呈现产品部署形态、能源连接关系与运行状态。
+          </p>
+        </section>
+
+        <aside class="park-scene-nav" aria-label="核心设备视角" data-page-node-id="G8ZEQHFcVJO8fqm2wWxN3C">
+          <div class="park-scene-nav__status" aria-live="polite" data-page-node-id="UqGo4syxpPpnLywvTloVnE">
+            <span data-page-node-id="aZ9vJ4sS4BSfjmmpz11g1g"><i data-page-node-id="s8x4vtYR3kjLotEZgx2S9c"></i> 当前视角</span>
+            <strong id="park-active-scene" data-page-node-id="RZ2UGqcunbWqDaxYuqSw6n">园区全景</strong>
+          </div>
+
+          <div class="park-scene-nav__head" data-page-node-id="2TDA0K4Z0XlaPAxl1LeTqw">
+            <strong data-page-node-id="YWyu5G0d6EBXa5akaU54Oj">核心设备</strong>
+          </div>
+
+          <button
+            class="park-scene-button is-active"
+            type="button"
+            data-method="FocusOverview"
+            data-label="园区全景"
+            aria-pressed="true" data-page-node-id="LSrieMZrVCCymjijvXnScV"
+          >
+            <i class="park-scene-dot" style="--scene-color:#22bd7b" data-page-node-id="IWMy4N5nmUQ204vzR4IUwA"></i>
+            <span data-page-node-id="FLogEqvGYazrbJotZzjc0Y">
+              <strong data-page-node-id="fdDn1qFljU6D70blrk1sLZ">园区全景</strong>
+              <small data-page-node-id="vPhaEicqa5pqEi9RYj7cSf">新能源部署总览</small>
+            </span>
+            <b data-page-node-id="kaOgfJ5wTo0VwEVxWzViaX">01</b>
+          </button>
+
+          <button
+            class="park-scene-button"
+            type="button"
+            data-method="FocusPV"
+            data-label="分布式光伏"
+            aria-pressed="false" data-page-node-id="0IWVOFxcsjPb2e5AxMAhfJ"
+          >
+            <i class="park-scene-dot" style="--scene-color:#168bb2" data-page-node-id="1TkSttswIKMRVh4jT3OwIR"></i>
+            <span data-page-node-id="HLhBTT5DTdk06T3Srb3Lmh">
+              <strong data-page-node-id="gNisiv2rHQzIYtGOE1oo69">分布式光伏</strong>
+              <small data-page-node-id="EectZNafygeoVjC4iy2UMl">屋顶光伏阵列</small>
+            </span>
+            <b data-page-node-id="laL3IQgV8pw4KzD7WlFXVV">02</b>
+          </button>
+
+          <button
+            class="park-scene-button"
+            type="button"
+            data-method="FocusMobileCharging"
+            data-label="移动储充"
+            aria-pressed="false" data-page-node-id="E3ckh2a5obmhQ6Ttf1An4V"
+          >
+            <i class="park-scene-dot" style="--scene-color:#5479c7" data-page-node-id="ZHI9A1HFUcwCvywosgBG3m"></i>
+            <span data-page-node-id="pCfMNVoMJvemxo5DF9ukd6">
+              <strong data-page-node-id="uj0FT9hjyVU96vTZHADArA">移动储充</strong>
+              <small data-page-node-id="efU4Sem8RLC7EkzGnGPbf4">移动补能设备</small>
+            </span>
+            <b data-page-node-id="igySCtAmHJ9031sAqLGiZX">03</b>
+          </button>
+
+          <button
+            class="park-scene-button"
+            type="button"
+            data-method="FocusFixedCharger"
+            data-label="固定充电桩"
+            aria-pressed="false" data-page-node-id="u4DzD9gCiFDL3Wc0VeOjXG"
+          >
+            <i class="park-scene-dot" style="--scene-color:#e19a2c" data-page-node-id="vjB7aGzs0jAghCMyVfWYk9"></i>
+            <span data-page-node-id="dpf0JYbFhc0D93ZE217yPw">
+              <strong data-page-node-id="56EIVY2Jc1f90W1qZCqdiB">固定充电桩</strong>
+              <small data-page-node-id="hVSDxthlDsgpuC2FJG85Lf">园区充电设施</small>
+            </span>
+            <b data-page-node-id="D13p2mUudSma019hsfYnHh">04</b>
+          </button>
+
+          <button
+            class="park-scene-button"
+            type="button"
+            data-method="FocusEnergyStorage"
+            data-label="储能设备"
+            aria-pressed="false" data-page-node-id="iXpAChrRnQYeVpQsnV8CKs"
+          >
+            <i class="park-scene-dot" style="--scene-color:#7b68d6" data-page-node-id="J1rK1k7FGXtWngsPf7SdqA"></i>
+            <span data-page-node-id="DdvAIz0Nc6JgwDBO9LStn1">
+              <strong data-page-node-id="Q42y6BpTV8x3TFMY7Pzk66">储能设备</strong>
+              <small data-page-node-id="Rat7oXvTVkzUZtelrD9rlR">园区储能设施</small>
+            </span>
+            <b data-page-node-id="w8T43Mr3bPpI2DNHIpN3mi">05</b>
+          </button>
+        </aside>
+
+        <div id="park-world-labels" class="park-world-labels" aria-label="设备位置" data-page-node-id="bLDPh31St4PFvBU70SViea">
+          <button class="park-world-label" type="button" data-anchor="pv" data-method="FocusPV" hidden data-page-node-id="VlNSPGVhdFBCTee0TH0yma">
+            <span class="park-world-label__card" data-page-node-id="tPGpDIgNDw3BgFyqo40bVw"><strong data-page-node-id="GG4Qf56xBgralPMrMlRZhp">分布式光伏</strong><small data-page-node-id="BkK7NbyhXt08BfahkZkFvq">PHOTOVOLTAIC</small></span>
+            <span class="park-world-label__stem" data-page-node-id="3fHMofCMRMCjCFQGksmAHE"></span>
+            <span class="park-world-label__pulse" data-page-node-id="AEoGYDOJduStu3gpGBN3zi"></span>
+          </button>
+
+          <button class="park-world-label" type="button" data-anchor="mobile" data-method="FocusMobileCharging" hidden data-page-node-id="P8yTZSnj5l8hvekyaXSrzC">
+            <span class="park-world-label__card" data-page-node-id="w41EoZStYunjLSAtn5rkoM"><strong data-page-node-id="AIfZ9LrthoulJfwW9geRUd">移动储充</strong><small data-page-node-id="uuEd2EuwtsMnnkECWyk9ga">MOBILE CHARGING</small></span>
+            <span class="park-world-label__stem" data-page-node-id="y8TNzH060SBhlrnTEBltrx"></span>
+            <span class="park-world-label__pulse" data-page-node-id="Y0yH8HplBbgY3wFEZGqrlp"></span>
+          </button>
+
+          <button class="park-world-label" type="button" data-anchor="charger" data-method="FocusFixedCharger" hidden data-page-node-id="4RUFcGneRAcUiIeXhqHolU">
+            <span class="park-world-label__card" data-page-node-id="uK2uCOkRgcUEe02OVQcDPn"><strong data-page-node-id="ODhGmwbkDUpNBqBDJ20fwa">固定充电桩</strong><small data-page-node-id="75lNb6hW2DTIlzmqGAAMhk">EV CHARGER</small></span>
+            <span class="park-world-label__stem" data-page-node-id="XsPAKxIwfjWXESjiKMHFv6"></span>
+            <span class="park-world-label__pulse" data-page-node-id="8VfQNH4WV1o3TzZkc05evc"></span>
+          </button>
+
+          <button class="park-world-label" type="button" data-anchor="energy" data-method="FocusEnergyStorage" hidden data-page-node-id="SDfKA5JNM6NDTq4alTDFuC">
+            <span class="park-world-label__card" data-page-node-id="G73CpJuO7PTv2fMBh4CbxS"><strong data-page-node-id="rI5F7Oa9ozWhPFT8cgnCiQ">储能设备</strong><small data-page-node-id="CqGMFyiqlFBMWp4lG8yyMx">ENERGY STORAGE</small></span>
+            <span class="park-world-label__stem" data-page-node-id="y07LeSFFN94phYZhObqkvp"></span>
+            <span class="park-world-label__pulse" data-page-node-id="7rTdADdlGSwYbwtIQSZZpY"></span>
+          </button>
+
+          <div class="park-route-label park-route-label--a" data-anchor="chargeA" aria-label="A 点充电位" hidden data-page-node-id="8VEYsltCFivFVph11p9Kft">
+            <span class="park-route-label__card" data-page-node-id="Bd1GjIvEPXrsPCltcHz4qo"><b data-page-node-id="5FTEplAphgBxAhxGZwHWFw">A</b><span data-page-node-id="ppi5F670n24R8y5FGHe5w4"><strong data-page-node-id="qCG33o101wGdN8MflLheev">充电位</strong><small data-page-node-id="fpWNxJ9lSpHAFAlA72NPbX">CHARGING POINT</small></span></span>
+            <span class="park-route-label__stem" data-page-node-id="vTGnyRCuecTqyah0EBbPsD"></span>
+            <span class="park-route-label__pulse" data-page-node-id="j9K7gnO6h7cUCCVHvKMj9y"></span>
+          </div>
+
+          <div class="park-route-label park-route-label--b" data-anchor="dischargeB" aria-label="B 点放电位" hidden data-page-node-id="UAB3yM3hRijGALcqgnyZsa">
+            <span class="park-route-label__card" data-page-node-id="zpEucDdqTMptuKu1m53riR"><b data-page-node-id="Sp1xV0JVvBAsezNxuEyvq5">B</b><span data-page-node-id="XS9NrZsAgLASBMQpO1xGgH"><strong data-page-node-id="NsExBQWPRhuorgOXBwAoqP">放电位</strong><small data-page-node-id="vbFN5PXMgf3ADG3ftpVaFp">DISCHARGING POINT</small></span></span>
+            <span class="park-route-label__stem" data-page-node-id="hgNzv7TdkA962W7ZFmWg8u"></span>
+            <span class="park-route-label__pulse" data-page-node-id="qUTarwbkbNbSNhXOTMlHDk"></span>
+          </div>
+
+          <div class="park-building-label" data-anchor="building_n1" data-page-node-id="NcBxgW2HkQneTzH4HAU4ZH">
+            <div class="park-building-number" data-page-node-id="IzEPhR8vWOXCGNCmBX9Dkz">N1</div>
+            <div class="park-building-company" data-page-node-id="rjeSIFWZwrrtx0zHkuEb07">山东旭泰机械制造有限公司</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n2" data-page-node-id="KJmPjwoSrGth9tNAbMCbqc">
+            <div class="park-building-number" data-page-node-id="uir81Nou8jOyguTUm1Gw5T">N2</div>
+            <div class="park-building-company" data-page-node-id="4ACPi3gpwoUckBDKKxMIIf">山东旭泰机械制造有限公司（洽谈中）</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n3" data-page-node-id="arOFeXc8aNewUeBHTiN2dx">
+            <div class="park-building-number" data-page-node-id="wgCeZzbHd4OHAuBDW4UqFa">N3</div>
+            <div class="park-building-company" data-page-node-id="y50PbSBSDeQYzMiK0bOjkB">玻璃纤维遮阳帘</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n4" data-page-node-id="Kf5neg4hv5p0DTa4ztGeBt">
+            <div class="park-building-number" data-page-node-id="sCoe1yWqIvwK3k7MOm6it9">N4</div>
+            <div class="park-building-company" data-page-node-id="9i1oftPnhcSlrlUx382Fl4">泰安市海洋新材料</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n5" data-page-node-id="64PV9FmoVfTjWp1zOY4RyJ">
+            <div class="park-building-number" data-page-node-id="B4d2JZEcMpbOVyhlwZMzpp">N5</div>
+            <div class="park-building-company" data-page-node-id="dxb4c2PTVlmPXfYia0hY3w">山东远吉食品有限公司</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n6" data-page-node-id="AnPmBYkA3898zPMd9z1SU4">
+            <div class="park-building-number" data-page-node-id="HW0mtY06cUNrIcBcnngTdo">N6</div>
+            <div class="park-building-company" data-page-node-id="BPsNifsqgfnxBS8X0bGKMF">泰安市海洋新材料</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n7" data-page-node-id="HsRX7IoY1Bvisz7hJUJ20A">
+            <div class="park-building-number" data-page-node-id="LgJBEHFVlzKfgZNkAxrPir">N7</div>
+            <div class="park-building-company" data-page-node-id="kg9QYhJ5868re5ob9Mq2Uk">泰安市顺行汽车玻璃有限公司</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_n8" data-page-node-id="jGX0eYHYGc93RnKVC9CesY">
+            <div class="park-building-number" data-page-node-id="pN0W5kB4DMMX5XQ74APFcy">N8</div>
+            <div class="park-building-company" data-page-node-id="fYQWRTub0HkR3AfU8yau9A">泰安市顺行汽车玻璃有限公司</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s1" data-page-node-id="BDVfvCo7mOxbQ5TKjHM1m5">
+            <div class="park-building-number" data-page-node-id="2z7MQcwmvkFi6TOL4bxgmI">S1</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s2" data-page-node-id="wYrEqyLJdr6BLnAURhvKpO">
+            <div class="park-building-number" data-page-node-id="kb3Kg7zOf2kEHSj7VP1cMj">S2</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s3" data-page-node-id="QC66wVaFGlm8iYwCO6c75O">
+            <div class="park-building-number" data-page-node-id="G8fHqAoSkc5CK7HXOaYqOp">S3</div>
+            <div class="park-building-company" data-page-node-id="0qwHaaAHtS9xubj90XQrkY">山东泰莱综合能源服务有限公司</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s4" data-page-node-id="EJXUYOAAXa5ueg5wngIyQw">
+            <div class="park-building-number" data-page-node-id="KeF2SCeBG5WqtF4O8SUw4w">S4</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s5" data-page-node-id="p9drF3gGSxvHWoG3tdlgQi">
+            <div class="park-building-number" data-page-node-id="ScKjj1Qe4vV87X3m3LFRvz">S5</div>
+            <div class="park-building-company" data-page-node-id="P9HBEhNAThb6F7kVY9j5Ny">山东润英建设有限公司</div>
+            <div class="park-building-company" data-page-node-id="V6081bdoolAJfakVztPph2">鸿跃智能</div>
+            <div class="park-building-company" data-page-node-id="T9gizHrsj3OYG7nrXjElWa">喷涂喷塑</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s6" data-page-node-id="ttEUuBsgI1CMsOf0ygGBJa">
+            <div class="park-building-number" data-page-node-id="YzPQT29zlPrUexLoJrZNIu">S6</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s7" data-page-node-id="rSMSJJK7t7ot8bjKjE0SEr">
+            <div class="park-building-number" data-page-node-id="VbOQdcWwYICCgoLNEil4Kz">S7</div>
+            <div class="park-building-company" data-page-node-id="XqKZGqOMfPse7mU6TqO4Oq">泰安市尚宏金属制品有限公司</div>
+            <div class="park-building-company" data-page-node-id="R2xbnwAGHHt3W4n9oajmBL">泰安市海宸智能科技有限公司</div>
+            <div class="park-building-company" data-page-node-id="18jG9qiakCXs6cKaTOQSBm">泰安市仟宏建设有限公司</div>
+            <div class="park-building-company" data-page-node-id="nNPRrtIqVn1qEvj2LTanmP">山东鼎宏电力设备有限公司</div>
+            <div class="park-building-company" data-page-node-id="08FB6x5BL6CezuTZzWpeYH">泰安市超睿重工有限公司</div>
+            <div class="park-building-company" data-page-node-id="VSrLPxOqK1DEAOzeAUZcal">岳峰化工设备</div>
+            <div class="park-building-company" data-page-node-id="sf9sbEXp7DD1D7yWc9a1ks">大未来机械装备</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s8" data-page-node-id="WjCLIVEVlPf67yQHgkUI8t">
+            <div class="park-building-number" data-page-node-id="FjtxQhmfBoCoX9vMW0ErpR">S8</div>
+            <div class="park-building-company" data-page-node-id="ZqGXFBnqYk7Mj5PCq0I82s">双盈供应链</div>
+            <div class="park-building-company" data-page-node-id="ySeNVzs0wxgWtMxSKDO5ZG">盛鑫泽科技</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s9" data-page-node-id="u8bPRyZyg2H76l7M2XHHEw">
+            <div class="park-building-number" data-page-node-id="0R5uOxXo9KExGZ2HsK7vko">S9</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s10" data-page-node-id="WD2JrVUwkbcV6w1alXSgpo">
+            <div class="park-building-number" data-page-node-id="LGKuQV1DXaKSEm6U0xhWdk">S10</div>
+            <div class="park-building-company" data-page-node-id="dambYlBGocVGBGddSR1DfS">山东东远塑机（洽谈中）</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s11" data-page-node-id="vWsT55nXdFfySiaAPlnu8P">
+            <div class="park-building-number" data-page-node-id="nnPuvLO2I7OCzH3vZh0Al7">S11</div>
+            <div class="park-building-company" data-page-node-id="x9nbOrtNtsv7PaP1VPLUgC">东岳机械制作</div>
+          </div>
+          <div class="park-building-label" data-anchor="building_s12" data-page-node-id="TVbRck2nhB70Dhw312wVll">
+            <div class="park-building-number" data-page-node-id="epnEWgPSjxFNIVhfNEtIZR">S12</div>
+            <div class="park-building-company" data-page-node-id="2D51PmCq2wVaERkMBbDYZS">山东实强智能科技有限公司</div>
+          </div>
+        </div>
+
+        <button
+          id="park-zero-carbon-platform"
+          class="park-external-entry"
+          type="button" data-page-node-id="Gf97hPODp7WSp0CFiAkk2H"
+        >
+          <span data-page-node-id="05e3VqIIACyNy6Nw4hPhO6">泰莱综能绿色零碳智能管理平台</span>
+        </button>
+
+        <div class="park-interaction-hint" aria-hidden="true" data-page-node-id="X9VJZPh8JHlGnkh2S3gE7V">
+          <span class="park-mouse" data-page-node-id="pEUt1O1XZyAEaKjxB2EZsj"><i data-page-node-id="2uTsp9BiLIBfeoxEavnuTd"></i></span>
+          <span data-page-node-id="dHGR1i87t8slBfwq8pS61s">拖拽旋转&nbsp;&nbsp;·&nbsp;&nbsp;滚轮缩放&nbsp;&nbsp;·&nbsp;&nbsp;静置后自动环游</span>
+        </div>
+
+        <div id="park-scene-card" class="park-scene-card" aria-live="polite" data-page-node-id="sGoxVdHCiG6zf3V0stau04">
+          <h3 class="park-scene-card__title" data-page-node-id="tPEiBwqhUalZRC6RBY6Ckp">园区全景</h3>
+          <p class="park-scene-card__body" data-page-node-id="uDxBUU3mSyDR7GYmpY80ru">
+            距高铁泰安站、京台高速泰安西收费站均 3.5km，紧邻 104 国道，10 分钟直达岱岳区政府｜16 栋高标准厂房，600~12000㎡/栋，檐高 12m，跨度 25~30m，10T 牛腿，央企施工，道路宽 14~19m｜区属国企西部经济独资建设，注册资本 6 亿元，AA +级信用，旗下 8 家子公司
+          </p>
+        </div>
+
+        <button
+          id="park-fullscreen-btn"
+          class="park-fullscreen-btn"
+          type="button"
+          aria-label="全屏" data-page-node-id="UFozxckf7qnKPBDKfEG2aX"
+        >⛶ 全屏</button>
+      </section>
+    </main>
+
+    <script src="ParkWebUI/park-ui.js"></script>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+
+      function unityShowBanner(msg, type) {
+        var warningBanner = document.querySelector("#unity-warning");
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? "block" : "none";
+        }
+
+        var div = document.createElement("div");
+        div.textContent = msg;
+        warningBanner.appendChild(div);
+
+        if (type === "error") {
+          div.className = "park-warning park-warning--error";
+        } else {
+          div.className = type === "warning" ? "park-warning park-warning--warning" : "park-warning";
+          setTimeout(function () {
+            if (div.parentNode) div.parentNode.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/building-label-formal-candidate.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/building-label-formal-candidate.data.unityweb",
+        frameworkUrl: buildUrl + "/building-label-formal-candidate.framework.js.unityweb",
+        codeUrl: buildUrl + "/building-label-formal-candidate.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "ZeroCarbonParkWebPOC",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
+
+      /* 渲染分辨率降档（流畅优先）：0.75=均衡(推荐) 0.6=极致流畅(实测无增益) 1.0=最清晰但最吃GPU */
+      config.devicePixelRatio = 0.75;
+
+      /* WebGL 上下文属性：强制使用高性能GPU(独显) + 关闭 MSAA 抗锯齿（GPU 负载大幅下降） */
+      config.webglContextAttributes = {
+        powerPreference: "high-performance",
+        antialias: false
+      };
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        document.querySelector("#unity-container").className = "unity-mobile";
+        canvas.className = "unity-mobile";
+      }
+
+      document.querySelector("#unity-loading-bar").style.display = "grid";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = function () {
+        createUnityInstance(canvas, config, function (progress) {
+          var percent = Math.round(progress * 100);
+          document.querySelector("#unity-progress-bar-full").style.width = percent + "%";
+          document.querySelector("#park-load-percent").textContent = percent + "%";
+        })
+          .then(function (unityInstance) {
+            window.parkUnityInstance = unityInstance;
+            document.querySelector("#unity-loading-bar").style.display = "none";
+            if (window.ParkWebUI) window.ParkWebUI.setReady(unityInstance);
+          })
+          .catch(function (message) {
+            unityShowBanner(String(message), "error");
+          });
+      };
+
+      document.body.appendChild(script);
+    </script>
+
+    <!-- FPS 实时显示（诊断用，测完可整段删除） -->
+    <div id="fps-badge" style="position:fixed;right:10px;bottom:6px;z-index:999;font:12px/1.5 Consolas,monospace;color:#fff;background:rgba(0,0,0,.55);padding:3px 10px;border-radius:8px;pointer-events:none;">FPS --</div>
+    <script>
+      (function () {
+        var el = document.getElementById("fps-badge");
+        var frames = 0;
+        var last = performance.now();
+        function loop(t) {
+          frames++;
+          if (t - last >= 1000) {
+            var fps = Math.round((frames * 1000) / (t - last));
+            var color = fps >= 50 ? "#4ade80" : fps >= 30 ? "#fbbf24" : "#f87171";
+            el.textContent = "FPS " + fps;
+            el.style.color = color;
+            frames = 0;
+            last = t;
+          }
+          requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
+</html>
